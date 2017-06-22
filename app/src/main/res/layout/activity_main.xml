@@ -10,6 +10,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:labelFor="@+id/item"
+            android:visibility="@{loggedIn ? View.VISIBLE : View.GONE}" />
+
+        <Button
+            android:id="@+id/add_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add item"
+            android:visibility="@{loggedIn ? View.VISIBLE : View.GONE}" />
+
         <Button android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

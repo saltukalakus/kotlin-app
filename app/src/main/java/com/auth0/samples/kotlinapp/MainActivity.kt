@@ -4,7 +4,9 @@ import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.EditText
 import android.widget.ListView
+import android.widget.Toast
 import com.android.volley.toolbox.Volley
 import com.auth0.android.Auth0
 import com.auth0.android.provider.WebAuthProvider
@@ -39,6 +41,17 @@ class MainActivity : AppCompatActivity() {
         // triggering the login method when the button is clicked
         val loginButton = findViewById(R.id.login_button)
         loginButton.setOnClickListener { login() }
+
+        val addItemButton = findViewById(R.id.add_item)
+        val itemEditText = findViewById(R.id.item) as EditText
+        addItemButton.setOnClickListener {
+            val item = itemEditText.text.toString()
+            addItem(queue, item, CredentialsManager.getAccessToken(), {
+                itemEditText.text.clear()
+                Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show()
+                getItems(this, queue, listToDo)
+            })
+        }
     }
 
     // Auth0 triggers an intent on a successful login
