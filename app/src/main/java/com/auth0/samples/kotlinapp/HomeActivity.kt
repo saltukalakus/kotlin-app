@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 import com.auth0.samples.kotlinapp.MyApplication
 import com.auth0.samples.kotlinapp.R
 import com.auth0.samples.kotlinapp.MainActivity
+import android.widget.Toast
 
 class HomeActivity : AppCompatActivity() {
 
@@ -43,6 +44,17 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
             this?.finish()
         }
+        
+        addItemBtn.setOnClickListener {
+            val queue = Volley.newRequestQueue(this)
+            val item = itemEditText.text.toString()
+            addItem(queue, item, CredentialsManager.getAccessToken(this), {
+                itemEditText.text?.clear()
+                Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show()
+                getItems(this, queue, list_todo)
+            })
+        }
+
     }
 
     private fun getUserName() {

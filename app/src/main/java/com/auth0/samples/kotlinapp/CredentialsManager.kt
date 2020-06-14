@@ -19,10 +19,10 @@ object CredentialsManager {
                 .apply()
     }
 
-    fun getAccessToken(context: Context): String? {
+    fun getAccessToken(context: Context): String {
         val sp = context.getSharedPreferences(
                 PREFERENCES_NAME, Context.MODE_PRIVATE)
 
-        return sp!!.getString(ACCESS_TOKEN, null)
+        return sp!!.getString(ACCESS_TOKEN, "")
     }
 }

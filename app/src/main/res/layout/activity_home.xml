@@ -13,9 +13,28 @@
         android:layout_height="wrap_content"
         android:text="@string/logOut"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addItemBtn"
+            style="@style/Button"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:text="Add New" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/list_todo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="616dp" />
 
 </LinearLayout>

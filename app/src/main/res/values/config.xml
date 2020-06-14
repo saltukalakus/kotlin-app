@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- replace the values with yours account details -->
-    <string name="auth0ClientId">REPLACE</string>
-    <string name="auth0Domain">REPLACE</string>
-    <string name="auth0Audience">REPLACE</string>
+    <string name="auth0ClientId">fDgCXFdFV6GE4D594VQ0CrD70FlkKjA6</string>
+    <string name="auth0Domain">saltukalakus.auth0.com</string>
+    <string name="auth0Audience">https://kotlin-app</string>
     <string name="auth0Scope"></string>
     <string name="auth0CallbackScheme">login</string>
     <string name="auth0CallbackUrl">/android/com.auth0.samples.kotlinapp/callback</string>
